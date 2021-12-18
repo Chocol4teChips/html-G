@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="  d-flex  justify-content-end align-self-end">
-                        <a href="index_app.html"> <button class="btn btn-outline-dark"> <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i> </button> </a>
+                        <button id="btn_logout" class="btn btn-outline-dark"> <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i> </button>
                     </div>
                 </div>
             </div>
@@ -51,4 +51,44 @@
         </div>
     </div>
 </body>
+<script>
+    $("#btn_logout").click(()=> {
+        Swal.fire({
+        title: 'กรุณายืนยันออกจากระบบ!',
+        icon: 'info',
+        color: 'rgb(255, 255, 255)',
+        background: 'rgb(123, 128, 138) url(/images/trees.png)',
+        border: 'rgb(0, 0, 0)',
+        backdrop: ` rgb(163, 153, 140,0.9)`,
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'ยกเลิก',
+        confirmButtonText: 'ยืนยัน'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                showConfirmButton: false,
+                title: 'ออกจากระบบเสร็จสิ้น',
+                text: 'กำลังกลับไปยังหน้า Login',
+                icon: 'success',
+                color: 'rgb(255, 255, 255)',
+                background: 'rgb(123, 128, 138) url(/images/trees.png)',
+                border: 'rgb(0, 0, 0)',
+                backdrop: ` rgb(163, 153, 140,0.9)`,
+                })
+                let count = 3;
+                let timerId = setInterval(() => {
+                    count--;
+                    console.log(count);
+                    if (count == 0) {
+                        location.href = "/การบ้าน/html-G/index_app.html"
+                        clearInterval(timerId);
+                    }
+                }, 1000)
+            }
+        })
+    })
+    
+</script>
 </html>
