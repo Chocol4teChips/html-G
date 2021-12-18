@@ -35,12 +35,32 @@
                     </div>
                     <div class="mb-3">
                         <label for="validationCustom02" class="form-label text-white">Password</label>
-                        <input type="password" class="form-control" id="validationCustom02" placeholder="password"
-                            min="6" text="2" required>
-                        <input type="password" class="form-control" id="validationCustom02"
-                            placeholder="confirm password" required>
+                        <input type="text" class="form-control" id="password" placeholder="password" min="6" required>
+                        <input type="text" class="form-control" id="confirm_password" placeholder="confirm password"
+                            required>
+                        <span id='message'></span>
                         <div class="invalid-feedback">
                             <p class="fw-bold"> กรุณากรอก Password โดนใช้ 0-9 A-Z a-z อย่างน้อย 12 ตัว </p>
+                        </div>
+                    </div>
+
+                    <!-- https://mdbootstrap.com/snippets/jquery/alize_/3540175#js-tab-view -->
+                    <div class="container col-md-6 ">
+                        <div class="alert password-alert" role="alert">
+                            <ul class="" style="list-style-type: none;">
+                                <li class="requirements leng"><i class="fas fa-check green-text"></i><i
+                                        class="fas fa-times red-text"></i> Your password must have at least 8 chars.
+                                </li>
+                                <li class="requirements big-letter"><i class="fas fa-check green-text"></i><i
+                                        class="fas fa-times red-text"></i> Your password must have at least 1 big
+                                    letter.</li>
+                                <li class="requirements num"><i class="fas fa-check green-text"></i><i
+                                        class="fas fa-times red-text"></i> Your password must have at least 1 number.
+                                </li>
+                                <li class="requirements special-char"><i class="fas fa-check green-text"></i><i
+                                        class="fas fa-times red-text"></i> Your password must have at least 1 special
+                                    char.</li>
+                            </ul>
                         </div>
                     </div>
                     <div class="mb-3">
@@ -67,48 +87,21 @@
     </div>
 </body>
 <script>
-    (function () {
-        'use strict'
-        var forms = document.querySelectorAll('.needs-validation')
-        Array.prototype.slice.call(forms)
-            .forEach(function (form) {
-                form.addEventListener('submit', function (event) {
-                    if (form.checkValidity()) {
-                        event.preventDefault()
-                        let count = 5;
-                        let timerId = setInterval(() => {
-                            count--;
-                            console.log(count);
-                            if (count == 0) {
-                                location.href = "/index_app.html"
-                                clearInterval(timerId);
-                            }
-                        }, 1000);
-                        Swal.fire({
-                            title: 'Coffemaid ยินดีต้อนรับ!',
-                            text: 'สมัครสมาชิกเสร็จสิ้น กำลังกลับสู่หน้า Login',
-                            color: 'rgb(255, 255, 255)',
-                            background: 'rgb(123, 128, 138) url(/images/trees.png)',
-                            border: 'rgb(0, 0, 0)',
-                            backdrop: ` rgb(163, 153, 140,0.9)`,
-                            imageUrl: 'https://fontecoffee.com/product_images/uploaded_images/coffee-online-where-to-find-the-freshest-coffee-online-1200x628.png',
-                            imageWidth: 400,
-                            imageHeight: 200,
-                            imageAlt: 'Custom image',
-                            icon: 'success',
-                            showConfirmButton: false,
-                        })
-                    }
-                    if (!form.checkValidity()) {
-                        event.preventDefault()
-                        event.stopPropagation()
-                        console.log(form);
-                    }
-                    form.classList.add('was-validated')
-                }, false)
-            })
-    })()
 
+
+    function passCheck() {
+        $('#password, #confirm_password').on('focusout', function () {
+            if ($('#password').val() == $('#confirm_password').val()) {
+                $('#message').html('Matching').css('color', 'green');
+                status = true;
+                console.log(status);
+            } else {
+                $('#message').html('Not Matching').css('color', 'red');
+                status = false;
+                console.log(status);
+            }
+        });
+    }
 
     function checkValueInfield() {
         (function () {
@@ -119,7 +112,7 @@
                     form.addEventListener('submit', function (event) {
                         if (form.checkValidity()) {
                             event.preventDefault()
-                            let count = 5;
+                            let count = 3;
                             let timerId = setInterval(() => {
                                 count--;
                                 console.log(count);
@@ -143,7 +136,7 @@
                                 showConfirmButton: false,
                             })
                         }
-                        if (!form.checkValidity()) {
+                        if (!form.checkValidity() && (status == true)) {
                             event.preventDefault()
                             event.stopPropagation()
                         }
@@ -154,9 +147,14 @@
     }
 
     $(() => {
+
+        var status = false;
         checkValueInfield();
+        passCheck();
 
     })
+
+
 
 
 </script>
