@@ -92,6 +92,7 @@
                     if (!form.checkValidity()) {
                         event.preventDefault()
                         event.stopPropagation()
+                        console.log(form);
                     }
                     form.classList.add('was-validated')
                 }, false)
