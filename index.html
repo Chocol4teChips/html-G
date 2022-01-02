@@ -29,7 +29,7 @@
                     <form class="row g-3 needs-validation" novalidate>
                         <div class="mb-1">
                             <label for="validationCustom01" class="form-label text-white">UseName</label>
-                            <input type="text" class="form-control" id="validationCustom01" placeholder="usename"
+                            <input type="text" class="form-control id_User" id="validationCustom01" placeholder="usename"
                                 required>
                         </div>
                         <div class="mb-3">
@@ -76,7 +76,44 @@
                     form.addEventListener('submit', function (event) {
                         if (form.checkValidity()) {
                             event.preventDefault()
-                            let count = 2;
+                            var ID = $(".id_User").val();
+                            if (ID== 1 ){
+                                let count = 2;
+                                let timerId = setInterval(() => {
+                                    count--;
+                                    console.log(count);
+                                    if (count == 0) {
+                                        location.href = "/app_addmin_1.html"
+                                        clearInterval(timerId);
+                                    }
+                                }, 1000)
+                                let timerInterval
+                                Swal.fire({
+                                    title: 'Coffemaid',
+                                    html: 'ยินดีต้อนรับเข้าสู่ระบบ',
+                                    color: 'rgb(255, 255, 255)',
+                                    background: 'rgb(123, 128, 138) url(/images/trees.png)',
+                                    border: 'rgb(0, 0, 0)',
+                                    backdrop: ` rgb(163, 153, 140,0.9)`,
+                                    timer: 2000,
+                                    timerProgressBar: true,
+                                    didOpen: () => {
+                                        Swal.showLoading()
+                                        const b = Swal.getHtmlContainer().querySelector('b')
+                                        timerInterval = setInterval(() => {
+                                            b.textContent = Swal.getTimerLeft()
+                                        }, 1000)
+                                    },
+                                    willClose: () => {
+                                        clearInterval(timerInterval)
+                                    }
+                                }).then((result) => {
+                                    if (result.dismiss === Swal.DismissReason.timer) {
+                                    }
+                                })
+                            }
+                            else{
+                                let count = 2;
                             let timerId = setInterval(() => {
                                 count--;
                                 console.log(count);
@@ -109,6 +146,8 @@
                                 if (result.dismiss === Swal.DismissReason.timer) {
                                 }
                             })
+                            }
+                            
                         }
                         if (!form.checkValidity()) {
                             event.preventDefault()
