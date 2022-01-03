@@ -236,11 +236,11 @@
         for (let i = 0; i <= 10; i++) {
             var line = "<div id='btndel_1_" + i + "' class='card bg-dark text-white border-2 border-primary text-center p-3 m-2 col-md-5 col-lg-3'>"
             line += "<div class='w-100 h-100' >"
-            line += "<img  src='datamenu.id_" + i + ".img' alt='' width='100%' height='100%'>"
+            line += "<img  src="+ datamenu.id_+i.img +"alt='' width='100%' height='100%'>"
             line += "</div>"
             line += "<div>"
-            line += " <h5 class='mt-4'>" + datamenu.id_1.name + "</h5>"
-            line += "<p> ราคา : " + datamenu.id_1.price + " บาท </p>"
+            line += " <h5 class='mt-4'>" + datamenu.id_+i.name + "</h5>"
+            line += "<p> ราคา : " + datamenu.id_+i.price + " บาท </p>"
             line += "<div class='mb-3 d-flex justify-content-center'>"
             line += "<label class='text-white bg-dark' for='sel1'>จำนวน :"
             line += "<select class='text-white bg-dark' id='dataN_9'>"
@@ -308,7 +308,6 @@
             "price": 43
         }
     }`)
-<<<<<<< HEAD
 
 
 
@@ -320,40 +319,6 @@
             var img_coffee = document.getElementById("img_coffee_1").getAttribute('src');
             console.log(name_coffee, price_coffee, dataN, img_coffee);
         })
-=======
-    let x = json_data_coffee;
-    Posts_1(x)
-    function Posts_1(x) {
-        console.log(x);
-        let n = "1";
-        console.log(x.id_+n);
-        var datamenu = x;
-        for (var i = 1; i <= 9; i++) {
-            var line = "<div id='btndel_1_"+i+"' class='card bg-dark text-white border-2 border-primary text-center p-3 m-2 col-md-5 col-lg-3'>"
-                line += "<div class='w-100 h-100' >"
-                line += "<img  src='"+ datamenu.id_1.img + "' alt='' width='100%' height='100%'>"
-                line += "</div>"
-                line += "<div>"
-                line += " <h5 class='mt-4'>"+ datamenu.id_1.name +"</h5>"
-                line += "<p> ราคา : "+ datamenu.id_1.price +" บาท </p>"
-                line += "<div class='mb-3 d-flex justify-content-center'>"
-                line += "<label class='text-white bg-dark' for='sel1'>จำนวน :"
-                line += "<select class='text-white bg-dark' id='dataN_9'>"
-                line += "<option value='1'>1</option>"
-                line += "<option value='2'>1</option>"
-                line += "<option value='3'>1</option>"
-                line += "<option value='4'>1</option>"
-                line += "<option value='5'>1</option>"
-                line += "<option value='6'>1</option>"
-                line += "</select>"
-                line += "</label>"
-                line += "</div>"
-                line += "<button class='btn btn-outline-danger my-3' onClick='del_1_1;''>ลบรายการอาหาร</button>"
-                line += "</div>"
-                line += "</div>"
-                $("#div_coffee").append(line);
-        }
->>>>>>> 6be62b61e0b55262ac0fb1d35ffc1b62a22c9f9e
     }
 
 
@@ -362,14 +327,5 @@
         Posts_1(json_data_coffee);
     })
 
-
-
-    // Posts_1(x)
-
-
-
-
-
 </script>
-
 </html>
