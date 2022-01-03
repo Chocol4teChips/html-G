@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="YOU/PATH/dist/css/custom-alert-bootstrap.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css" rel="stylesheet" />
 </head>
 <style>
     ::-webkit-scrollbar {
@@ -89,6 +89,7 @@
                 <div id="div_coffee" class=" m-2 d-flex flex-row-reverse flex-wrap-reverse justify-content-center ">
 
                 </div>
+
                 <div class="sticky-top fixed-bottom container-fluid d-flex justify-content-end ms-2">
                     <button class="btn btn-outline-dark" data-bs-target="#showForm" data-bs-toggle="modal"><i
                             class="fas fa-shopping-basket fa-3x"></i></button>
@@ -103,94 +104,44 @@
                             <div class="modal-body container overflow-auto" style="height: 640px;">
                                 <div id="food_items_1 ">
                                     <h5>รายการอาหาร</h5>
-                                    <div class=" d-flex flex-row-reverse flex-wrap-reverse justify-content-center"">
-                                        <div class=" card bg-dark text-white border-2 border-primary text-center p-4
-                                        m-2 col-md-5 col-lg-5">
-                                        <div class="w-100 h-100">
-                                            <img src="https://www.gnutemberg.org/wp-content/uploads/2018/01/img_0760-600x381.jpg"
-                                                alt="" width="100%" height="100%">
-                                        </div>
-                                        <div>
-                                            <h5 class=" mt-4"> ข้าวผัดกระเพลาไข่ดาว </h5>
-                                            <p class=" my-0"> ราคา : 200 บาท </p>
-                                            <p class=" my-0"> จำนวน : 1 รายการ</p>
-                                            <button type="button" class="btn btn-danger mt-2">ลบรายการอาหาร</button>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="card bg-dark text-white border-2 border-primary text-center p-4 m-2 col-md-5 col-lg-5">
-                                        <div class="w-100 h-100">
-                                            <img src="https://pstip.cc/b/images/article-pstip/Food/food-single-dish/food-single-dish-271259-1-1.jpg"
-                                                alt="" width="100%" height="100%">
-                                        </div>
-                                        <div>
-                                            <h5 class=" mt-4"> ข้าวหน้าหมูเกาหลี กิมจิ </h5>
-                                            <p class=" my-0"> ราคา : 200 บาท </p>
-                                            <p class=" my-0"> จำนวน : 1 รายการ</p>
-                                            <button type="button" class="btn btn-danger mt-2">ลบรายการอาหาร</button>
-                                        </div>
+                                    <div id="food_d_1" class=" d-flex flex-row-reverse flex-wrap-reverse justify-content-center">
+                                        
                                     </div>
                                 </div>
-                            </div>
-                            <hr>
-                            <div id="food_items_2">
-                                <h5>รายการเครื่องดื่ม</h5>
-                                <div id="food_d_2" class="d-flex flex-row-reverse flex-wrap-reverse justify-content-center"">
+                                <hr>
+                                <div id="food_items_2">
+                                    <h5>รายการเครื่องดื่ม</h5>
+                                    <div id="food_d_2" class="d-flex flex-row-reverse flex-wrap-reverse justify-content-center">  
                                     
+                                    </div>
                                 </div>
-                        </div>
-                        <hr>
-                        <div id="food_items_3">
-                            <h5>รายการของหวาน</h5>
-                            <div class="d-flex flex-row-reverse flex-wrap-reverse justify-content-center"">
-                                        <div class=" card bg-dark text-white border-2 border-primary text-center p-4
-                                m-2 col-md-5 col-lg-5">
-                                <div class="w-100 h-100">
-                                    <img src="https://obs.line-scdn.net/0hwqgLqQYvKF5aNQRAYP1XCWBjKzFpWTtdPgN5XQZbdmonA2cKYFswMHk2Jm8gDG8AM1BvP38yM29xVmsMMlow/w644"
-                                        alt="" width="100%" height="100%">
+                                    <hr>
+                                <div id=" food_items_3">
+                                    <h5>รายการของหวาน</h5>
+                                    <div id="food_d_3" class="d-flex flex-row-reverse flex-wrap-reverse justify-content-center">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer d-flex flex-row justify-content-center">
+                                <div>
+                                    <div class=" input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">โต๊ะที่</span>
+                                        </div>
+                                        <input type="text" placeholder="โต๊ะที่" class="form-control" id="cardnumber">
+                                    </div>
                                 </div>
                                 <div>
-                                    <h5 class=" mt-4"> น้ำอัดลม </h5>
-                                    <p class=" my-0"> ราคา : 40 บาท </p>
-                                    <p class=" my-0"> จำนวน : 2 รายการ</p>
-                                    <button type="button" class="btn btn-danger mt-2">ลบรายการอาหาร</button>
-                                </div>
-                            </div>
-                            <div
-                                class="card bg-dark text-white border-2 border-primary text-center p-4 m-2 col-md-5 col-lg-5">
-                                <div class="w-100 h-100">
-                                    <img src="https://www.thaiticketmajor.com/static/imgUpload/imgeditor/6(160).jpg"
-                                        alt="" width="100%" height="100%">
-                                </div>
-                                <div>
-                                    <h5 class=" mt-4"> สตรอว์เบอร์รี บานาน่า แมงโก้ลาวาโฟลว์ </h5>
-                                    <p class=" my-0"> ราคา : 200 บาท </p>
-                                    <p class=" my-0"> จำนวน : 1 รายการ</p>
-                                    <button type="button" class="btn btn-danger mt-2">ลบรายการอาหาร</button>
+                                    <button class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
+                                    <button class="btn btn-success">ยืนยัน</button>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="modal-footer d-flex flex-row justify-content-center">
-                    <div>
-                        <div class=" input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">โต๊ะที่</span>
-                            </div>
-                            <input type="text" placeholder="โต๊ะที่" class="form-control" id="cardnumber">
-                        </div>
-                    </div>
-                    <div>
-                        <button class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                        <button class="btn btn-success">ยืนยัน</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    </div>
     </div>
 </body>
 <script>
