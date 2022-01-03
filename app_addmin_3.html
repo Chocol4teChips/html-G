@@ -214,10 +214,16 @@
             line += "<button  class='btn btn-danger mt-2' onClick='del_("+i+");'>ลบรายการอาหาร</button>"
             line += "</div>"
             line += "</div>"
-            $("#food_d_3").append(line);
+            localStorage.food_3.append(line);
+            $("#food_d_3").append(localStorage.food_3);
     }
     function del_(i) {
         $("#menu_B_"+i).remove();
     }
+    $(() => {
+        $("#food_d_1").append(localStorage.food_1);
+        $("#food_d_2").append(localStorage.food_2);
+        $("#food_d_3").append(localStorage.food_3);
+    })
 </script>
 </html>
