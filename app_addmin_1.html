@@ -5,18 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebApp</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="YOU/PATH/dist/css/custom-alert-bootstrap.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css" rel="stylesheet" />
 </head>
 <style>
@@ -95,6 +89,7 @@
                 <div id="div_coffee" class=" m-2 d-flex flex-row-reverse flex-wrap-reverse justify-content-center ">
 
                 </div>
+
                 <div class="sticky-top fixed-bottom container-fluid d-flex justify-content-end ms-2">
                     <button class="btn btn-outline-dark" data-bs-target="#showForm" data-bs-toggle="modal"><i
                             class="fas fa-shopping-basket fa-3x"></i></button>
@@ -109,124 +104,48 @@
                             <div class="modal-body container overflow-auto" style="height: 640px;">
                                 <div id="food_items_1 ">
                                     <h5>รายการอาหาร</h5>
-                                    <div class=" d-flex flex-row-reverse flex-wrap-reverse justify-content-center"">
-                                        <div class=" card bg-dark text-white border-2 border-primary text-center p-4
-                                        m-2 col-md-5 col-lg-5">
-                                        <div class="w-100 h-100">
-                                            <img src="https://www.gnutemberg.org/wp-content/uploads/2018/01/img_0760-600x381.jpg"
-                                                alt="" width="100%" height="100%">
-                                        </div>
-                                        <div>
-                                            <h5 class=" mt-4"> ข้าวผัดกระเพลาไข่ดาว </h5>
-                                            <p class=" my-0"> ราคา : 200 บาท </p>
-                                            <p class=" my-0"> จำนวน : 1 รายการ</p>
-                                            <button type="button" class="btn btn-danger mt-2">ลบรายการอาหาร</button>
-                                        </div>
+                                    <div id="food_d_1" class=" d-flex flex-row-reverse flex-wrap-reverse justify-content-center">
+                                        
                                     </div>
-                                    <div
-                                        class="card bg-dark text-white border-2 border-primary text-center p-4 m-2 col-md-5 col-lg-5">
-                                        <div class="w-100 h-100">
-                                            <img src="https://pstip.cc/b/images/article-pstip/Food/food-single-dish/food-single-dish-271259-1-1.jpg"
-                                                alt="" width="100%" height="100%">
-                                        </div>
-                                        <div>
-                                            <h5 class=" mt-4"> ข้าวหน้าหมูเกาหลี กิมจิ </h5>
-                                            <p class=" my-0"> ราคา : 200 บาท </p>
-                                            <p class=" my-0"> จำนวน : 1 รายการ</p>
-                                            <button type="button" class="btn btn-danger mt-2">ลบรายการอาหาร</button>
-                                        </div>
+                                </div>
+                                <hr>
+                                <div id="food_items_2">
+                                    <h5>รายการเครื่องดื่ม</h5>
+                                    <div id="food_d_2" class="d-flex flex-row-reverse flex-wrap-reverse justify-content-center">  
+                                    
+                                    </div>
+                                </div>
+                                    <hr>
+                                <div id=" food_items_3">
+                                    <h5>รายการของหวาน</h5>
+                                    <div id="food_d_3" class="d-flex flex-row-reverse flex-wrap-reverse justify-content-center">
+                                        
                                     </div>
                                 </div>
                             </div>
-                            <hr>
-                            <div id="food_items_2">
-                                <h5>รายการเครื่องดื่ม</h5>
-                                <div class="d-flex flex-row-reverse flex-wrap-reverse justify-content-center"">
-                                        <div class=" card bg-dark text-white border-2 border-primary text-center p-4
-                                    m-2 col-md-5 col-lg-5">
-                                    <div class="w-100 h-100">
-                                        <img src="https://obs.line-scdn.net/0hwqgLqQYvKF5aNQRAYP1XCWBjKzFpWTtdPgN5XQZbdmonA2cKYFswMHk2Jm8gDG8AM1BvP38yM29xVmsMMlow/w644"
-                                            alt="" width="100%" height="100%">
+                            <div class="modal-footer d-flex flex-row justify-content-center">
+                                <div>
+                                    <div class=" input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">โต๊ะที่</span>
+                                        </div>
+                                        <input type="text" placeholder="โต๊ะที่" class="form-control" id="cardnumber">
                                     </div>
-                                    <div>
-                                        <h5 class=" mt-4"> น้ำอัดลม </h5>
-                                        <p class=" my-0"> ราคา : 40 บาท </p>
-                                        <p class=" my-0"> จำนวน : 2 รายการ</p>
-                                        <button type="button" class="btn btn-danger mt-2">ลบรายการอาหาร</button>
-                                    </div>
-                                </div>
-                                <div
-                                    class="card bg-dark text-white border-2 border-primary text-center p-4 m-2 col-md-5 col-lg-5">
-                                    <div class="w-100 h-100">
-                                        <img src="https://www.thaiticketmajor.com/static/imgUpload/imgeditor/6(160).jpg"
-                                            alt="" width="100%" height="100%">
-                                    </div>
-                                    <div>
-                                        <h5 class=" mt-4"> สตรอว์เบอร์รี บานาน่า แมงโก้ลาวาโฟลว์ </h5>
-                                        <p class=" my-0"> ราคา : 200 บาท </p>
-                                        <p class=" my-0"> จำนวน : 1 รายการ</p>
-                                        <button type="button" class="btn btn-danger mt-2">ลบรายการอาหาร</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div id="food_items_2">
-                            <h5>รายการของหวาน</h5>
-                            <div class="d-flex flex-row-reverse flex-wrap-reverse justify-content-center"">
-                                        <div class=" card bg-dark text-white border-2 border-primary text-center p-4
-                                m-2 col-md-5 col-lg-5">
-                                <div class="w-100 h-100">
-                                    <img src="https://obs.line-scdn.net/0hwqgLqQYvKF5aNQRAYP1XCWBjKzFpWTtdPgN5XQZbdmonA2cKYFswMHk2Jm8gDG8AM1BvP38yM29xVmsMMlow/w644"
-                                        alt="" width="100%" height="100%">
                                 </div>
                                 <div>
-                                    <h5 class=" mt-4"> น้ำอัดลม </h5>
-                                    <p class=" my-0"> ราคา : 40 บาท </p>
-                                    <p class=" my-0"> จำนวน : 2 รายการ</p>
-                                    <button type="button" class="btn btn-danger mt-2">ลบรายการอาหาร</button>
-                                </div>
-                            </div>
-                            <div
-                                class="card bg-dark text-white border-2 border-primary text-center p-4 m-2 col-md-5 col-lg-5">
-                                <div class="w-100 h-100">
-                                    <img src="https://www.thaiticketmajor.com/static/imgUpload/imgeditor/6(160).jpg"
-                                        alt="" width="100%" height="100%">
-                                </div>
-                                <div>
-                                    <h5 class=" mt-4"> สตรอว์เบอร์รี บานาน่า แมงโก้ลาวาโฟลว์ </h5>
-                                    <p class=" my-0"> ราคา : 200 บาท </p>
-                                    <p class=" my-0"> จำนวน : 1 รายการ</p>
-                                    <button type="button" class="btn btn-danger mt-2">ลบรายการอาหาร</button>
+                                    <button class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
+                                    <button class="btn btn-success">ยืนยัน</button>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="modal-footer d-flex flex-row justify-content-center">
-                    <div>
-                        <div class=" input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">โต๊ะที่</span>
-                            </div>
-                            <input type="text" placeholder="โต๊ะที่" class="form-control" id="cardnumber">
-                        </div>
-                    </div>
-                    <div>
-                        <button class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                        <button class="btn btn-success">ยืนยัน</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
-    </div>
-    </div>
 </body>
 <script>
     function Posts_1(json_data_coffee) {
-        console.log(json_data_coffee);
         var datamenu = json_data_coffee;
         for (let i = 1; i <= 9; i++) {
             var line = "<div id='btndel_1_" + i + "' class='card bg-dark text-white border-2 border-primary text-center p-3 m-2 col-md-5 col-lg-3'>"
@@ -236,9 +155,24 @@
             line += "<div>"
             line += " <h5 class='mt-4'>" + datamenu[i].name + "</h5>"
             line += "<p> ราคา : " + datamenu[i].price + " บาท </p>"
+            line += "<button class='btn btn-outline-success mb-3' onClick='add_1_("+i+");'>เพิ่ม</button>"
+            line += "</div>"
+            line += "</div>"
+            $("#div_coffee").append(line);
+        }
+    }
+    function add_1_(i ) {
+        var datamenu = json_data_coffee;
+        var line = "<div id='menu_D_"+i+"' class='card bg-dark text-white border-2 border-primary text-center p-4 m-2 col-md-5 col-lg-5'>"
+            line += "<div class='w-100 h-100'>"
+            line += "<img src='"+datamenu[i].img +"' alt='' width='100%' height='100%'>"
+            line += "</div>"
+            line += "<div>"
+            line += "<h5 class='mt-4'>"+ datamenu[i].name +"</h5>"
+            line += "<p class='my-0'> ราคา : "+ datamenu[i].price +" บาท </p>"
             line += "<div class='mb-3 d-flex justify-content-center'>"
             line += "<label class='text-white bg-dark' for='sel1'>จำนวน :"
-            line += "<select class='text-white bg-dark' id='dataN_9'>"
+            line += "<select class='text-white bg-dark' id='dataN_"+i+"'>"
             line += "<option value='1'>1</option>"
             line += "<option value='2'>2</option>"
             line += "<option value='3'>3</option>"
@@ -248,11 +182,13 @@
             line += "</select>"
             line += "</label>"
             line += "</div>"
-            line += "<button class='btn btn-outline-success my-3' onClick='del_1_"+i+";''>เพิ่ม</button>"
+            line += "<button  class='btn btn-danger mt-2' onClick='del_("+i+");'>ลบรายการอาหาร</button>"
             line += "</div>"
             line += "</div>"
-            $("#div_coffee").append(line);
-        }
+            $("#food_d_2").append(line);
+    }
+    function del_(i) {
+        $("#menu_D_"+i).remove();
     }
     var json_data_coffee = $.parseJSON(`{ 
         "1":{
@@ -314,6 +250,5 @@
         addMenu();
         Posts_1(json_data_coffee);
     })
-
 </script>
 </html>
