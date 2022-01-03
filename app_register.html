@@ -33,28 +33,12 @@
                             <div class="form-floating mb-4">
                                 <input type="text" id="fname" class="form-control" placeholder="Username" required />
                                 <label class="form-label" for="fname">First Name</label>
-
-                                <div class="invalid-feedback">
-                                    Please enter
-                                </div>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-floating mb-4">
                                 <input type="text" id="lname" class="form-control" placeholder="Username" required />
                                 <label class="form-label" for="lname">Last name</label>
-
-                                <div class="invalid-feedback">
-                                    Please enter
-                                </div>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-
                             </div>
                         </div>
                     </div>
@@ -62,70 +46,32 @@
                     <div class="form-floating mb-4">
                         <input type="text" id="Username" class="form-control" placeholder="Username" required />
                         <label class="form-label" for="Username">username</label>
-
-                        <div class="invalid-feedback">
-                            Please enter
-                        </div>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-
                     </div>
 
                     <div class="form-floating mb-4">
                         <input type="email" id="UserEmail" class="form-control" placeholder="name@example.com"
                             required />
                         <label class="form-label" for="UserEmail">Your Email</label>
-
-                        <div class="invalid-feedback">
-                            Please enter
-                        </div>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-
                     </div>
 
                     <div class="form-floating mb-4">
-                        <input type="password" id="userPwd" class="form-control" placeholder="Password" required />
-                        <label class="form-label" for="userPwd">Password</label>
-
-                        <div class="invalid-feedback">
-                            Please enter
-                        </div>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-
+                        <input type="text" id="userPwd" class="form-control" placeholder="Password" required />
+                        <label class="form-label " for="userPwd">Password</label>
+                        <p class="text-danger mt-2"> password จะต้องประกอบไปด้วย พิมพ์ใหญ่ พิมพ์เล็ก ตัวเลข และ อักษรพิเศษ</p>
                     </div>
 
                     <div class="form-floating mb-4">
                         <input type="password" id="ConfirmUserPwd" class="form-control" placeholder="ConfirmUserPwd"
                             required />
                         <label class="form-label" for="ConfirmUserPwd">Confirm Password</label>
-
-                        <div class="invalid-feedback">
-                            Please enter
-                        </div>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-
                     </div>
 
-                    <div class="container col-6 rounded-3 bg-white mb-3 p-md-3 d-flex align-items-md-start flex-column" id="Pwd">
-                        <p>Password must contain the following:</p>
-                        <p id="letter" class="text-danger">A <b>lowercase</b> letter</p>
-                        <p id="capital" class="text-danger">A <b>capital (uppercase)</b> letter</p>
-                        <p id="number" class="text-danger">A <b>number</b></p>
-                        <p id="length" class="text-danger">Minimum <b>8 characters</b></p>
-                    </div>
-
-                    <div class="col-12">
-                        <button class="btn btn-primary" type="submit">Submit form</button>
-                    </div>
-
+                    
                 </form>
+
+                <div class="col-12">
+                    <button class="btn btn-primary" type="btn" id="btnSubmit">Submit form</button>
+                </div>
 
                 <a href="index_app.html"> <button class="btn btn-outline-dark text-white px-5 mx-2 my-2">Cancel</button>
                 </a>
@@ -135,41 +81,81 @@
 </body>
 <script>
 
-    // function password_check() {
 
-    // }
+    function testPassword() {
 
+        var res;
+        var str = document.getElementById("userPwd").value;
+        if (str.match(/[a-z]/g) && str.match(
+            /[A-Z]/g) && str.match(
+                /[0-9]/g) && str.match(
+                    /[^a-zA-Z\d]/g) && str.length >= 8) {
+            if ($("#userPwd").val() == $("#ConfirmUserPwd").val()) {
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
+    }
 
-  
+    function checkField() {
+        var fname = $("#fname").val();
+        var lname = $("#lname").val();
+        var email = $("#UserEmail").val();
+        var username = $("#Username").val();
+        var password = $("#userPwd").val();
+        var confPassword = $("#ConfirmUserPwd").val();
 
+        if ((fname == "") || (lname == "") || (email = "") || (username == "") || (password == "") || (ConfirmUserPwd == "")) {
+            Swal.fire({
+                icon: 'error',
+                title: 'ข้อมูลไม่ครบ',
+                text: 'กรุณากรอกข้อมูลให้ครบทุกช่อง'
+            })
+            return false;
+        } else {
+            return true;
+        }
+    }
 
+    function checkPassword() {
+        checkField();
+        testPassword();
+        if (testPassword() && checkField()) {
+            let timerInterval
+            Swal.fire({
+                title: 'กรุณารอซักครู่',
+                html: 'ไปยังหน้าถัดไปหลังจาก <b></b> มิลลิวินาที.',
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading()
+                    const b = Swal.getHtmlContainer().querySelector('b')
+                    timerInterval = setInterval(() => {
+                        b.textContent = Swal.getTimerLeft()
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
+                }
+            }).then((result) => {
+                /* Read more about handling dismissals below */
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    window.location.href = "/index.html";
+                }
+            })
+
+        } else {
+            console.log("false");
+        }
+    }
 
 
     $(() => {
+        $("#btnSubmit").click(checkPassword);
+    });
 
-        
-        $("#Pwd").hide();
-
-        
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (function () {
-            'use strict'
-
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            var forms = document.querySelectorAll('.needs-validation')
-            // Loop over them and prevent submission
-            Array.prototype.slice.call(forms)
-                .forEach(function (form) {
-                    form.addEventListener('submit', function (event) {
-                        if (!form.checkValidity()) {
-                            event.preventDefault()
-                            event.stopPropagation()
-                        }
-                        form.classList.add('was-validated')
-                    }, false)
-                })
-        })()
-    })
 
 </script>
 
