@@ -229,7 +229,6 @@
     </div>
 </body>
 <script>
-
     function Posts_1(json_data_coffee) {
         console.log(json_data_coffee);
         var datamenu = json_data_coffee;
@@ -259,8 +258,6 @@
             $("#div_coffee").append(line);
         }
     }
-
-
     var json_data_coffee = $.parseJSON(`{ 
         "id_1":{
             "name": "มอคค่า",
@@ -308,9 +305,6 @@
             "price": 43
         }
     }`)
-
-
-
     function addMenu() {
         $("#add_menu_1").click(() => {
             var name_coffee = $("#name_coffee_1").text();
@@ -320,8 +314,6 @@
             console.log(name_coffee, price_coffee, dataN, img_coffee);
         })
     }
-
-
     $(() => {
         addMenu();
         Posts_1(json_data_coffee);
