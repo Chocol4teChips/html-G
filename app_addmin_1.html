@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,16 +23,13 @@
     ::-webkit-scrollbar {
         width: 6px;
     }
-
     ::-webkit-scrollbar-track {
         background: #ffffff;
     }
-
     ::-webkit-scrollbar-thumb {
         background: #888;
     }
 </style>
-
 <body class="container bg-dark ">
     <div class="container d-flex justify-content-start my-3 p-0 " style="background: #424B54; height:800px ">
         <div class="col-md-3 sticky-top" style="background: #E3E3E3; border-radius: 0px 40px 0px 0px;">
@@ -229,7 +225,6 @@
     </div>
 </body>
 <script>
-
     function Posts_1(json_data_coffee) {
         console.log(json_data_coffee);
         var datamenu = json_data_coffee;
@@ -259,8 +254,6 @@
             $("#div_coffee").append(line);
         }
     }
-
-
     var json_data_coffee = $.parseJSON(`{ 
         "id_1":{
             "name": "มอคค่า",
@@ -308,9 +301,6 @@
             "price": 43
         }
     }`)
-
-
-
     function addMenu() {
         $("#add_menu_1").click(() => {
             var name_coffee = $("#name_coffee_1").text();
@@ -320,8 +310,6 @@
             console.log(name_coffee, price_coffee, dataN, img_coffee);
         })
     }
-
-
     $(() => {
         addMenu();
         Posts_1(json_data_coffee);
