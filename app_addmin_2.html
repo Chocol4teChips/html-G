@@ -9,7 +9,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="YOU/PATH/dist/css/custom-alert-bootstrap.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css" rel="stylesheet" />
@@ -216,16 +215,10 @@
             line += "<button  class='btn btn-danger mt-2' onClick='del_("+i+");'>ลบรายการอาหาร</button>"
             line += "</div>"
             line += "</div>"
-            localStorage.food_1.append(line);
-            $("#food_d_1").append(localStorage.food_1);
+            $("#food_d_1").append(line);
     }
     function del_(i) {
         $("#menu_B_"+i).remove();
     }
-    $(() => {
-        $("#food_d_1").append(localStorage.food_1);
-        $("#food_d_2").append(localStorage.food_2);
-        $("#food_d_3").append(localStorage.food_3);
-    })
 </script>
 </html>
