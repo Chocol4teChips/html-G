@@ -189,42 +189,47 @@
 <script>
 
     var json_data_coffee = $.parseJSON(`{
-    "id_1":{
+    "1":{
         "name": "ข้าวผัดกุ้ง",
         "img": "https://341682-1054383-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2020/08/10-1.jpg",
         "price": 57
     },
-    "id_2":{
+    "2":{
         "name": "ผัดไทย",
         "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsEplPkrUxDYeZ1qHog7fUGM4q-qJPv7-Sa9me7s-fLyAj6d2fT5JjIBQpbMCTupmURkA&ampusqp=CAU",
         "price": 46
     },
-    "id_3":{
+    "3":{
         "name": "ข้าวคลุกกะปิ",
         "img": "https://img.kapook.com/fileupload_instant/images/food(2).jpg",
         "price": 63
     },
-    "id_4":{
+    "4":{
         "name": "ข้าวหมูแดง",
         "img": "https://s.isanook.com/he/0/rp/rc/w850h510/yatxacm1w0/aHR0cHM6Ly9zLmlzYW5vb2suY29tL2hlLzAvdWQvMC8zOTg5LzcuanBn.jpg",
         "price": 55
     },
-    "id_5":{
+    "5":{
         "name": "ข้าวหน้าไก่",
         "img": "https://i.pinimg.com/736x/6a/24/9b/6a249b55bf7ba2ee1a859c8cafb4a7f3--php.jpg",
         "price": 50
     },
-    "id_6":{
+    "6":{
         "name": "ข้าวหน้าหมูเกาหลี กิมจิ",
         "img": "https://pstip.cc/b/images/article-pstip/Food/food-single-dish/food-single-dish-271259-1-1.jpg",
         "price": 75
     },
-    "id_7":{
+    "7":{
         "name": "ข้าวหน้าแกงกะหรี่หมูทอด",
         "img": "https://www.maeban.co.th/upfiles/blog/3521_26_22.jpg",
         "price": 70
     },
-    "id_8":{
+    "8":{
+        "name": "ข้าวผัดกระเพลาไข่ดาว",
+        "img": "https://www.gnutemberg.org/wp-content/uploads/2018/01/img_0760-600x381.jpg",
+        "price": 60
+    },
+    "9":{
         "name": "ข้าวผัดกระเพลาไข่ดาว",
         "img": "https://www.gnutemberg.org/wp-content/uploads/2018/01/img_0760-600x381.jpg",
         "price": 60
@@ -239,20 +244,20 @@
         for (let i = 1; i <= 9; i++) {
             var line = "<div id='btndel_1_"+i+"' class='card bg-dark text-white border-2 border-primary text-center p-3 m-2 col-md-5 col-lg-3'>"
                 line += "<div class='w-100 h-100' >"
-                line += "<img  src='"+ datamenu.id_1.img +"' alt='' width='100%' height='100%'>"
+                line += "<img  src='"+ datamenu[i].img +"' alt='' width='100%' height='100%'>"
                 line += "</div>"
                 line += "<div>"
-                line += " <h5 class='mt-4'>"+ datamenu.id_1.name +"</h5>"
-                line += "<p> ราคา : "+ datamenu.id_1.price +" บาท </p>"
+                line += " <h5 class='mt-4'>"+ datamenu[i].name +"</h5>"
+                line += "<p> ราคา : "+ datamenu[i].price +" บาท </p>"
                 line += "<div class='mb-3 d-flex justify-content-center'>"
                 line += "<label class='text-white bg-dark' for='sel1'>จำนวน :"
                 line += "<select class='text-white bg-dark' id='dataN_9'>"
                 line += "<option value='1'>1</option>"
-                line += "<option value='2'>1</option>"
-                line += "<option value='3'>1</option>"
-                line += "<option value='4'>1</option>"
-                line += "<option value='5'>1</option>"
-                line += "<option value='6'>1</option>"
+                line += "<option value='2'>2</option>"
+                line += "<option value='3'>3</option>"
+                line += "<option value='4'>4</option>"
+                line += "<option value='5'>5</option>"
+                line += "<option value='6'>6</option>"
                 line += "</select>"
                 line += "</label>"
                 line += "</div>"
