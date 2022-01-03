@@ -25,43 +25,108 @@
                 <div class="mb-4 mt-3">
                     <h2 class="text-warning">Register</h2>
                 </div>
-                <form class="row g-3 needs-validation" novalidate>
-                    <div class="mb-3">
-                        <label for="validationCustom01" class="form-label text-white">UseName</label>
-                        <input type="text" class="form-control" id="validationCustom01" placeholder="usename" required>
-                        <div class="invalid-feedback">
-                            <p class="fw-bold"> กรุณากรอก UseName </p>
+
+                <form class="needs-validation" novalidate>
+
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div class="form-floating mb-4">
+                                <input type="text" id="fname" class="form-control" placeholder="Username" required />
+                                <label class="form-label" for="fname">First Name</label>
+
+                                <div class="invalid-feedback">
+                                    Please enter
+                                </div>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+
+                            </div>
                         </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="validationCustom02" class="form-label text-white">Password</label>
-                        <input type="text" class="form-control" id="password" placeholder="password" min="6" required>
-                        <input type="text" class="form-control" id="confirm_password" placeholder="confirm password"
-                            required>
-                        <span id='message'></span>
-                        <div class="invalid-feedback">
-                            <p class="fw-bold"> กรุณากรอก Password โดนใช้ 0-9 A-Z a-z อย่างน้อย 12 ตัว </p>
+                        <div class="col">
+                            <div class="form-floating mb-4">
+                                <input type="text" id="lname" class="form-control" placeholder="Username" required />
+                                <label class="form-label" for="lname">Last name</label>
+
+                                <div class="invalid-feedback">
+                                    Please enter
+                                </div>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+
+                            </div>
                         </div>
                     </div>
 
-                    
-                    <div class="mb-3">
-                        <label for="validationCustom03" class="form-label text-white">อีเมล</label>
-                        <input type="email" class="form-control" id="validationCustom03" placeholder="E-mail" required>
+                    <div class="form-floating mb-4">
+                        <input type="text" id="Username" class="form-control" placeholder="Username" required />
+                        <label class="form-label" for="Username">username</label>
+
                         <div class="invalid-feedback">
-                            <p class="fw-bold"> กรุณากรอก E-mail โดยมี @gmail.com/@hotmail.com </p>
+                            Please enter
                         </div>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+
                     </div>
-                    <div class="mb-3">
-                        <label for="validationCustom04" class="form-label text-white">Phone Number</label>
-                        <input type="text" class="form-control" id="validationCustom04" placeholder="0xx-xxxx-xxx"
-                            required>
+
+                    <div class="form-floating mb-4">
+                        <input type="email" id="UserEmail" class="form-control" placeholder="name@example.com"
+                            required />
+                        <label class="form-label" for="UserEmail">Your Email</label>
+
                         <div class="invalid-feedback">
-                            <p class="fw-bold"> กรุณากรอกเบอร์โทรศัพท์ </p>
+                            Please enter
                         </div>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+
                     </div>
-                    <a href="#"> <button class="btn btn-success px-5  mx-2 my-2" type="submit">Submit</button> </a>
+
+                    <div class="form-floating mb-4">
+                        <input type="password" id="userPwd" class="form-control" placeholder="Password" required />
+                        <label class="form-label" for="userPwd">Password</label>
+
+                        <div class="invalid-feedback">
+                            Please enter
+                        </div>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+
+                    </div>
+
+                    <div class="form-floating mb-4">
+                        <input type="password" id="ConfirmUserPwd" class="form-control" placeholder="ConfirmUserPwd"
+                            required />
+                        <label class="form-label" for="ConfirmUserPwd">Confirm Password</label>
+
+                        <div class="invalid-feedback">
+                            Please enter
+                        </div>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+
+                    </div>
+
+                    <div class="container col-6 rounded-3 bg-white mb-3 p-md-3 d-flex align-items-md-start flex-column" id="Pwd">
+                        <p>Password must contain the following:</p>
+                        <p id="letter" class="text-danger">A <b>lowercase</b> letter</p>
+                        <p id="capital" class="text-danger">A <b>capital (uppercase)</b> letter</p>
+                        <p id="number" class="text-danger">A <b>number</b></p>
+                        <p id="length" class="text-danger">Minimum <b>8 characters</b></p>
+                    </div>
+
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Submit form</button>
+                    </div>
+
                 </form>
+
                 <a href="index_app.html"> <button class="btn btn-outline-dark text-white px-5 mx-2 my-2">Cancel</button>
                 </a>
             </div>
@@ -70,55 +135,33 @@
 </body>
 <script>
 
-    function passCheck() {
-        $('#password, #confirm_password').on('focusout', function () {
-            if ($('#password').val() == $('#confirm_password').val()) {
-                $('#message').html('Matching').css('color', 'green');
-                status = true;
-                console.log(status);
-            } else {
-                $('#message').html('Not Matching').css('color', 'red');
-                status = false;
-                console.log(status);
-            }
-        });
-    }
+    // function password_check() {
 
-    function checkValueInfield() {
+    // }
+
+
+  
+
+
+
+
+    $(() => {
+
+        
+        $("#Pwd").hide();
+
+        
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function () {
             'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
             var forms = document.querySelectorAll('.needs-validation')
+            // Loop over them and prevent submission
             Array.prototype.slice.call(forms)
                 .forEach(function (form) {
                     form.addEventListener('submit', function (event) {
-                        if (form.checkValidity()) {
-                            
-                            event.preventDefault()
-                            let count = 3;
-                            let timerId = setInterval(() => {
-                                count--;
-                                console.log(count);
-                                if (count == 0) {
-                                    location.href = "/index_app.html"
-                                    clearInterval(timerId);
-                                }
-                            }, 1000);
-                            Swal.fire({
-                                title: 'Coffemaid ยินดีต้อนรับ!',
-                                text: 'สมัครสมาชิกเสร็จสิ้น กำลังกลับสู่หน้า Login',
-                                color: 'rgb(255, 255, 255)',
-                                background: 'rgb(123, 128, 138) url(/images/trees.png)',
-                                border: 'rgb(0, 0, 0)',
-                                backdrop: ` rgb(163, 153, 140,0.9)`,
-                                imageUrl: 'https://www.fontecoffee.com/product_images/uploaded_images/coffee-online-where-to-find-the-freshest-coffee-online-1200x628.png',
-                                imageWidth: 400,
-                                imageHeight: 200,
-                                imageAlt: 'Custom image',
-                                icon: 'success',
-                                showConfirmButton: false,
-                            })
-                        }
-                        if (!form.checkValidity() || (status == false)) {
+                        if (!form.checkValidity()) {
                             event.preventDefault()
                             event.stopPropagation()
                         }
@@ -126,15 +169,7 @@
                     }, false)
                 })
         })()
-    }
-
-    $(() => {
-        var status = false;
-        checkValueInfield();
-    });
-
-
-
+    })
 
 </script>
 
