@@ -145,9 +145,10 @@
     function namearr(arr){
         var data_arr = arr; 
         var namesArr = [];
-        namesArr.push(data_arr)
-        localStorage.setItem('div_F', JSON.stringify(namesArr));
         console.log(namesArr);
+        namesArr.push(data_arr)
+        localStorage.setItem('div_F', namesArr);
+        
     }
 
     function add_(i) {
@@ -175,7 +176,7 @@
             line += "</div>"
             line += "</div>"
             $("#food_d_1").append(line);
-            var arr_i = line;
+            var arr = line;
             namearr(arr)
     }
     function del_(i) {
