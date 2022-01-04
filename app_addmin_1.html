@@ -130,13 +130,13 @@
             line += "<div>"
             line += " <h5 class='mt-4'>" + datamenu[i].name + "</h5>"
             line += "<p> ราคา : " + datamenu[i].price + " บาท </p>"
-            line += "<button class='btn btn-outline-success my-3' onClick='add_1_("+i+");'>เพิ่ม</button>"
+            line += "<button class='btn btn-outline-success my-3' onClick='add_("+i+");'>เพิ่ม</button>"
             line += "</div>"
             line += "</div>"
             $("#div_coffee").append(line);
         }
     }
-    function add_1_(i) {
+    function add_(i) {
         var datamenu = json_data_coffee;
         var line = "<div id='menu_D_"+i+"' class='card bg-dark text-white border-2 border-primary text-center p-4 m-2 col-md-5 col-lg-5'>"
             line += "<div class='w-100 h-100'>"
@@ -161,6 +161,7 @@
             line += "</div>"
             line += "</div>"
             $("#food_d_2").append(line);
+            localStorage.setItem("div_F",$("#menu_D_"+i).val());
     }
     function del_(i) {
         $("#menu_D_"+i).remove();
@@ -214,6 +215,9 @@
     }`)
     $(() => {
         Posts_1(json_data_coffee);
+    })
+    $(document).ready(function() {
+        $("#food_d_1").html( localStorage.getItem("div_F"));
     })
 </script>
 </html>
